@@ -6,10 +6,7 @@ RUN echo "deb [arch=amd64,i386] http://mirrors.bestthaihost.com/mariadb/repo/10.
 RUN echo "deb-src http://mirrors.bestthaihost.com/mariadb/repo/10.1/debian jessie main" >> /etc/apt/sources.list
 RUN apt-get update -y && apt-get -y install vim nano  
 RUN groupadd -r mysql && useradd -r -g mysql mysql 
-RUN  apt-get install -y \
-	mariadb-server \
-	mariadb-oqraph-engine-10.1 \
-	pwgen 
+RUN  apt-get install -y mariadb-server pwgen 
 RUN  apt-get autoremove -y \
 	&& apt-get autoclean \
 	&& apt-get clean \
