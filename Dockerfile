@@ -3,13 +3,13 @@ MAINTAINER Manop <b.manop20@gmail.com>
 
 RUN printf "deb http://mariadb.biz.net.id/repo/10.1/ubuntu trusty main" >> /etc/apt/sources.list 
 RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
-RUN apt-get update -y && apt-get -y install vim nano  \
-	&& groupadd -r mysql && useradd -r -g mysql mysql \
-	&& apt-get install -y \
+RUN apt-get update -y && apt-get -y install vim nano  
+RUN groupadd -r mysql && useradd -r -g mysql mysql 
+RUN  apt-get install -y \
 	mariadb-server \
 	mariadb-oqraph-engine-10.1 \
 	pwgen \
-	&& apt-get autoremove -y \
+RUN  apt-get autoremove -y \
 	&& apt-get autoclean \
 	&& apt-get clean \
 	&& rm -rf /var/lib/mysql* /var/lib/apt/lists/*
