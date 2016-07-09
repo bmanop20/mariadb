@@ -2,7 +2,7 @@ FROM eboraas/debian:stable
 MAINTAINER Manop <b.manop20@gmail.com>
 
 RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db 
-RUN sudo apt-get install python-software-properties
+RUN sudo apt-get install -y python-software-properties python g++ 
 RUN sudo apt-get install software-properties-common
 RUN add-apt-repository 'deb http://mariadb.biz.net.id//repo/10.1/debian sid main' 
 RUN apt-get update -y && apt-get -y install vim nano  
