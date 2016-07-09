@@ -1,7 +1,6 @@
 FROM eboraas/debian:stable
 MAINTAINER Manop <b.manop20@gmail.com>
 
-RUN apt-get install python-software-properties
 RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db \
     && add-apt-repository 'deb http://mariadb.biz.net.id//repo/10.1/debian sid main' \
     && apt-get install -y software-properties-common
