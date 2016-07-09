@@ -8,7 +8,7 @@ RUN groupadd -r mysql && useradd -r -g mysql mysql
 RUN  apt-get install -y \
 	mariadb-server \
 	mariadb-oqraph-engine-10.1 \
-	pwgen \
+	pwgen 
 RUN  apt-get autoremove -y \
 	&& apt-get autoclean \
 	&& apt-get clean \
