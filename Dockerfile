@@ -1,8 +1,10 @@
 FROM eboraas/debian:stable
 MAINTAINER Manop <b.manop20@gmail.com>
 
-RUN printf "deb http://mariadb.biz.net.id/repo/10.1/ubuntu trusty main" >> /etc/apt/sources.list 
-RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
+RUN apt-get install python-software-properties
+RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db \
+    && add-apt-repository 'deb http://mariadb.biz.net.id//repo/10.1/debian sid main' \
+    && apt-get install -y software-properties-common
 RUN apt-get update -y && apt-get -y install vim nano  
 RUN groupadd -r mysql && useradd -r -g mysql mysql 
 RUN  apt-get install -y \
