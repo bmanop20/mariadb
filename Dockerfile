@@ -3,7 +3,7 @@ MAINTAINER Manop <b.manop20@gmail.com>
 
 RUN printf "deb http://mariadb.biz.net.id/repo/10.1/ubuntu trusty main" >> /etc/apt/sources.list \
 	&& apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db \
-	apt-get update -y && apt-get -y install vim nano  \
+	&& apt-get update -y && apt-get -y install vim nano  \
 	&& groupadd -r mysql && useradd -r -g mysql mysql \
 	&& apt-get install -y \
 	mariadb-server \
