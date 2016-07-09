@@ -28,7 +28,7 @@ RUN echo "* hard nofile 1024000" >> /etc/security/limits.conf
 RUN echo "* soft nproc 10240" >> /etc/security/limits.conf
 RUN echo "* hard nproc 10240" >> /etc/security/limits.conf
 
-VOLUMR ["/etc/mysql","/var/lib/mysql"]
+VOLUME  ["/etc/mysql", "/var/lib/mysql"]
 
 EXPOSE 3306
 
