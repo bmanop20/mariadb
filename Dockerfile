@@ -2,9 +2,8 @@ FROM eboraas/debian:stable
 MAINTAINER Manop <b.manop20@gmail.com>
 
 RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db 
-RUN apt-get install -y python-software-properties python g++ 
-RUN apt-get install software-properties-common
-RUN add-apt-repository 'deb http://mariadb.biz.net.id//repo/10.1/debian sid main' 
+RUN echo "deb [arch=amd64,i386] http://mirrors.bestthaihost.com/mariadb/repo/10.1/debian jessie main" >> /etc/apt/sources.list
+RUN echo "deb-src http://mirrors.bestthaihost.com/mariadb/repo/10.1/debian jessie main" >> /etc/apt/sources.list
 RUN apt-get update -y && apt-get -y install vim nano  
 RUN groupadd -r mysql && useradd -r -g mysql mysql 
 RUN  apt-get install -y \
